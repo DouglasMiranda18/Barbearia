@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuraBarbaStyle - Sua Barbearia</title>
-    
+    <title>Jurabarberstyle - Sua Barbearia</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <style>
         /* CSS Personalizado */
@@ -18,72 +21,84 @@
             background-color: #f8f5f2;
             color: #1f2937;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
         }
-        
+
         .hero-pattern {
             background-color: #1a1a1a;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23333333' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-        
+
         .appointment-card {
             background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-card {
             transition: all 0.3s ease;
         }
-        
+
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
-        
+
         .barber-pole {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 8px;
-            background: repeating-linear-gradient(
-                45deg,
-                #d9534f,
-                #d9534f 10px,
-                #ffffff 10px,
-                #ffffff 20px,
-                #5bc0de 20px,
-                #5bc0de 30px,
-                #ffffff 30px,
-                #ffffff 40px
-            );
+            background: repeating-linear-gradient(45deg,
+                    #d9534f,
+                    #d9534f 10px,
+                    #ffffff 10px,
+                    #ffffff 20px,
+                    #5bc0de 20px,
+                    #5bc0de 30px,
+                    #ffffff 30px,
+                    #ffffff 40px);
             animation: barberPole 8s linear infinite;
         }
-        
+
         @keyframes barberPole {
-            from { background-position: 0 0; }
-            to { background-position: 0 -80px; } /* Animação mais suave */
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 -80px;
+            }
+
+            /* Animação mais suave */
         }
-        
+
         .time-slot {
             transition: all 0.2s ease;
         }
-        
+
         .time-slot.available:hover {
-            background-color: #fde68a; /* Amarelo claro */
+            background-color: #fde68a;
+            /* Amarelo claro */
             border-color: #f59e0b;
             color: #1f2937;
         }
-        
+
         .time-slot.selected {
-            background-color: #fbbf24; /* Amarelo forte */
+            background-color: #fbbf24;
+            /* Amarelo forte */
             border-color: #d97706;
             color: #1f2937;
             font-weight: 600;
         }
-        
+
         .time-slot.unavailable {
             background-color: #e5e7eb;
             color: #9ca3af;
@@ -92,28 +107,43 @@
         }
 
         /* Ícones SVG para usar no HTML */
-        .icon-map-pin { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>'); }
-        .icon-phone { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>'); }
-        .icon-mail { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>'); }
-        .icon-clock { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>'); }
+        .icon-map-pin {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>');
+        }
+
+        .icon-phone {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>');
+        }
+
+        .icon-mail {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>');
+        }
+
+        .icon-clock {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>');
+        }
     </style>
 </head>
+
 <body class="antialiased">
 
     <header class="hero-pattern text-white">
         <div class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 text-center md:text-left">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Estilo e Tradição em Cada Corte</h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8">Transforme sua aparência com os melhores profissionais da cidade. Barba, cabelo e bigode com estilo único.</p>
-                <a href="#agendamento" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                <p class="text-lg md:text-xl text-gray-300 mb-8">Transforme sua aparência com os melhores profissionais
+                    da cidade. Barba, cabelo e bigode com estilo único.</p>
+                <a href="#agendamento"
+                    class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
                     Agendar Horário
                 </a>
             </div>
             <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-                <div class="relative w-72 h-72 rounded-full overflow-hidden border-4 border-amber-500 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1536520002442-99b64a79ae24?q=80&w=1887" alt="Barbeiro em ação" class="w-full h-full object-cover">
+                <div class="relative w-full max-w-xl aspect-square overflow-hidden">
+                    <img src="Jurandir.png" alt="Barbeiro em ação" class="w-full h-full object-cover">
                 </div>
             </div>
+
         </div>
     </header>
 
@@ -121,48 +151,70 @@
         <section id="servicos" class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-4">Nossos Serviços</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-12">Oferecemos uma variedade de serviços premium para cuidar da sua aparência com o máximo de qualidade.</p>
-                
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12">Oferecemos uma variedade de serviços premium para
+                    cuidar da sua aparência com o máximo de qualidade.</p>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="service-card bg-gray-50 rounded-lg p-8 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1622288432454-216b2fc7b265?q=80&w=1887" alt="Corte de Cabelo" class="w-full h-48 object-cover rounded-lg mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Corte de Cabelo</h3>
-                        <p class="text-gray-600 mb-4">Cortes modernos ou clássicos realizados com técnicas precisas e acabamento perfeito.</p>
+                        <img src="Corte 6.png" alt="Corte de Cabelo" class="w-full h-68 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Corte de Cabelo + Barba</h3>
+                        <p class="text-gray-600 mb-4">Cortes modernos ou clássicos realizados com técnicas precisas e
+                            acabamento perfeito.</p>
                         <div class="flex justify-between items-center text-amber-600 font-semibold">
-                            <span>R$ 45,00</span>
-                            <span>45 min</span>
+                            <span>R$ 25,00</span>
+                            <span>40 min</span>
                         </div>
+                        <button onclick="agendarServico('barba')"
+                            class="w-full bg-amber-600 text-white font-semibold py-2 px-4 rounded hover:bg-amber-700 transition duration-200">
+                            Agendar Corte de Cabelo + Barba
+                        </button>
+
                     </div>
+
                     <div class="service-card bg-gray-50 rounded-lg p-8 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1621607512214-6c34117be67d?q=80&w=2070" alt="Barba" class="w-full h-48 object-cover rounded-lg mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Barba</h3>
-                        <p class="text-gray-600 mb-4">Modelagem completa com toalha quente, produtos premium e finalização impecável.</p>
-                        <div class="flex justify-between items-center text-amber-600 font-semibold">
-                            <span>R$ 35,00</span>
-                            <span>30 min</span>
+                        <img src="Corte 1.png" alt="Barba" class="w-full h-68 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Corte + Pigmentação</h3>
+                        <p class="text-gray-600 mb-4">Transformação completa com corte de precisão, pigmentação
+                            personalizada.</p>
+                        <div class="flex justify-between items-center text-amber-600 font-semibold mb-4">
+                            <span>R$ 40,00</span>
+                            <span>50 min</span>
                         </div>
+                        <button onclick="agendarServico('hidratacao')"
+                            class="w-full bg-amber-600 text-white font-semibold py-2 px-4 rounded hover:bg-amber-700 transition duration-200">
+                            Agendar Corte + Pigmentação
+                        </button>
                     </div>
+
                     <div class="service-card bg-gray-50 rounded-lg p-8 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1595476108111-7842a2223c28?q=80&w=1887" alt="Combo Completo" class="w-full h-48 object-cover rounded-lg mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Combo Completo</h3>
-                        <p class="text-gray-600 mb-4">Corte de cabelo, barba, hidratação facial e massagem relaxante nos ombros.</p>
-                        <div class="flex justify-between items-center text-amber-600 font-semibold">
+                        <img src="Corte 4.png" alt="Combo Completo" class="w-full h-68 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Coloração cabelo</h3>
+                        <p class="text-gray-600 mb-4">Coloração de alta qualidade com tons personalizados, aplicação
+                            cuidadosa.</p>
+                        <div class="flex justify-between items-center text-amber-600 font-semibold mb-4">
                             <span>R$ 75,00</span>
                             <span>1h 15min</span>
                         </div>
+                        <button onclick="agendarServico('combo')"
+                            class="w-full bg-amber-600 text-white font-semibold py-2 px-4 rounded hover:bg-amber-700 transition duration-200">
+                            Agendar Coloração cabelo
+                        </button>
                     </div>
                 </div>
-            </div>
+
         </section>
 
         <section id="galeria" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-4">Nossa Galeria</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-12">Confira alguns dos nossos melhores trabalhos realizados por nossa equipe de profissionais.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12">Confira alguns dos nossos melhores trabalhos realizados
+                    por nossa equipe de profissionais.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="relative group h-80">
-                        <img src="https://images.unsplash.com/photo-1599338153381-80c8c719523f?q=80&w=1887" alt="Corte Moderno" class="w-full h-full object-cover rounded-lg shadow-lg">
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                        <img src="Corte 1.png" alt="Corte Moderno"
+                            class="w-full h-full object-cover rounded-lg shadow-lg">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-60 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
                             <div class="text-white">
                                 <h4 class="text-xl font-bold">Corte Moderno</h4>
                                 <p class="text-sm">Degradê com topete texturizado</p>
@@ -170,8 +222,10 @@
                         </div>
                     </div>
                     <div class="relative group h-80">
-                        <img src="https://images.unsplash.com/photo-1632345031435-8727f6897f53?q=80&w=1887" alt="Barba Estilizada" class="w-full h-full object-cover rounded-lg shadow-lg">
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                        <img src="Corte 2.png" alt="Barba Estilizada"
+                            class="w-full h-full object-cover rounded-lg shadow-lg">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-60 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
                             <div class="text-white">
                                 <h4 class="text-xl font-bold">Barba Estilizada</h4>
                                 <p class="text-sm">Modelagem completa com contornos precisos</p>
@@ -179,9 +233,11 @@
                         </div>
                     </div>
                     <div class="relative group h-80">
-                        <img src="https://images.unsplash.com/photo-1585749429312-34924c2ba4ce?q=80&w=1887" alt="Corte Clássico" class="w-full h-full object-cover rounded-lg shadow-lg">
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
-                             <div class="text-white">
+                        <img src="Corte 3.png" alt="Corte Clássico"
+                            class="w-full h-full object-cover rounded-lg shadow-lg">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-60 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                            <div class="text-white">
                                 <h4 class="text-xl font-bold">Corte Clássico</h4>
                                 <p class="text-sm">Estilo tradicional com toque moderno</p>
                             </div>
@@ -195,9 +251,10 @@
             <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold mb-4">Agende seu Horário</h2>
-                    <p class="text-gray-300 max-w-2xl mx-auto mb-12">Escolha o serviço, profissional, data e horário de sua preferência.</p>
+                    <p class="text-gray-300 max-w-2xl mx-auto mb-12">Escolha o serviço, profissional, data e horário de
+                        sua preferência.</p>
                 </div>
-                
+
                 <div class="max-w-4xl mx-auto appointment-card rounded-xl overflow-hidden">
                     <div class="flex">
                         <div class="barber-pole"></div>
@@ -205,58 +262,78 @@
                             <form id="appointment-form" novalidate>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-gray-800">
                                     <div>
-                                        <label for="fullName" class="block text-sm font-medium text-gray-700">Nome Completo</label>
-                                        <input type="text" name="fullName" id="fullName" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm" placeholder="Seu nome" required>
+                                        <label for="fullName" class="block text-sm font-medium text-gray-700">Nome
+                                            Completo</label>
+                                        <input type="text" name="fullName" id="fullName"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm"
+                                            placeholder="Seu nome" required>
                                     </div>
                                     <div>
-                                        <label for="whatsapp" class="block text-sm font-medium text-gray-700">WhatsApp</label>
-                                        <input type="tel" name="whatsapp" id="whatsapp" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm" placeholder="(11) 99999-9999" required>
+                                        <label for="whatsapp"
+                                            class="block text-sm font-medium text-gray-700">WhatsApp</label>
+                                        <input type="tel" name="whatsapp" id="whatsapp"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm"
+                                            placeholder="(11) 99999-9999" required>
                                     </div>
                                     <div class="md:col-span-2">
-                                        <label for="service" class="block text-sm font-medium text-gray-700">Serviço</label>
-                                        <select id="service" name="service" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm" required>
+                                        <label for="service"
+                                            class="block text-sm font-medium text-gray-700">Serviço</label>
+                                        <select id="service" name="service"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm"
+                                            required>
                                             <option value="">Selecione um serviço</option>
-                                            <option value="corte">Corte de Cabelo - R$ 45,00</option>
-                                            <option value="barba">Barba - R$ 35,00</option>
-                                            <option value="combo">Combo Completo - R$ 75,00</option>
-                                            <option value="hidratacao">Hidratação - R$ 40,00</option>
-                                            <option value="coloracao">Coloração - R$ 60,00</option>
+                                            <option value="corte">Corte de Cabelo - R$ 20,00</option>
+                                            <option value="barba">Corte de Cabelo + Barba - R$ 25,00</option>
+                                            <option value="hidratacao">Corte + Pigmentação - R$ 40,00</option>
+                                            <option value="combo">Coloração cabelo- R$ 70,00</option>
+
                                         </select>
                                     </div>
                                     <div>
-                                        <label for="barber" class="block text-sm font-medium text-gray-700">Barbeiro</label>
-                                        <select id="barber" name="barber" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm" required>
-                                            <option value="">Qualquer um</option>
-                                            <option value="carlos">Carlos</option>
-                                            <option value="andre">André</option>
-                                            <option value="marcos">Marcos</option>
+                                        <label for="barber"
+                                            class="block text-sm font-medium text-gray-700">Barbeiro</label>
+                                        <select id="barber" name="barber"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm"
+                                            required>
+                                            <option value="">Selecione um barbeiro</option>
+                                            <option value="carlos">Jurandir</option>
+                                            <option value="andre">Leonardo</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label for="date" class="block text-sm font-medium text-gray-700">Data</label>
-                                        <input type="date" id="date" name="date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm" required>
+                                        <input type="date" id="date" name="date"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 sm:text-sm"
+                                            required>
                                     </div>
 
                                     <div class="md:col-span-2">
                                         <h4 class="text-lg font-medium text-gray-900 mb-4">Horários Disponíveis</h4>
-                                        <div id="time-slots-container" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-                                            <p class="col-span-full text-gray-500">Selecione uma data para ver os horários.</p>
+                                        <div id="time-slots-container"
+                                            class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                                            <p class="col-span-full text-gray-500">Selecione uma data para ver os
+                                                horários.</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="md:col-span-2">
                                         <div class="flex items-start mt-4">
                                             <div class="flex h-5 items-center">
-                                                <input id="reminders" name="reminders" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-500" checked>
+                                                <input id="reminders" name="reminders" type="checkbox"
+                                                    class="h-4 w-4 rounded border-gray-300 text-amber-600 focus:ring-amber-500"
+                                                    checked>
                                             </div>
                                             <div class="ml-3 text-sm">
-                                                <label for="reminders" class="font-medium text-gray-700">Autorizo o envio de lembretes por WhatsApp</label>
-                                                <p class="text-gray-500">Você receberá lembretes antes do seu horário.</p>
+                                                <label for="reminders" class="font-medium text-gray-700">Autorizo o
+                                                    envio de lembretes por WhatsApp</label>
+                                                <p class="text-gray-500">Você receberá lembretes antes do seu horário.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md:col-span-2 mt-6">
-                                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">
+                                        <button type="submit"
+                                            class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">
                                             Confirmar Agendamento
                                         </button>
                                     </div>
@@ -272,47 +349,57 @@
             <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold mb-4">Contato</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto mb-12">Entre em contato conosco ou visite nossa barbearia.</p>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-12">Entre em contato conosco ou visite nossa barbearia.
+                    </p>
                 </div>
                 <div class="flex flex-col md:flex-row gap-12">
                     <div class="md:w-1/2">
                         <h3 class="text-2xl font-bold mb-6">Informações</h3>
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <span class="icon-map-pin w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
+                                <span
+                                    class="icon-map-pin w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
                                 <div>
                                     <h4 class="font-semibold">Endereço</h4>
-                                    <p class="text-gray-600">Av. Principal, 1234 - Centro<br>São Paulo - SP, 01000-000</p>
+                                    <p class="text-gray-600">Rua Dr. Aniceto Varejão, 900 - Candeias, Jaboatão dos
+                                        Guararapes -PE
+                                    </p>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <span class="icon-phone w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
+                                <span
+                                    class="icon-phone w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
                                 <div>
                                     <h4 class="font-semibold">Telefone</h4>
-                                    <p class="text-gray-600">(11) 99999-9999</p>
+                                    <p class="text-gray-600">(81) 98444-2392</p>
+
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                 <span class="icon-mail w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
+                                <span class="icon-mail w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
                                 <div>
                                     <h4 class="font-semibold">E-mail</h4>
                                     <p class="text-gray-600">contato@jurabarbastyle.com.br</p>
                                 </div>
                             </div>
-                             <div class="flex items-start">
-                                <span class="icon-clock w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
+                            <div class="flex items-start">
+                                <span
+                                    class="icon-clock w-6 h-6 mr-4 mt-1 text-amber-600 bg-contain bg-no-repeat"></span>
                                 <div>
                                     <h4 class="font-semibold">Horário de Funcionamento</h4>
-                                    <p class="text-gray-600">Segunda a Sexta: 9h às 19h<br>Sábado: 9h às 18h</p>
+                                    <p class="text-gray-600">Segunda a Sabado: 8h às 18:40h<br></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                         <h3 class="text-2xl font-bold mb-6">Localização</h3>
-                         <div class="rounded-lg overflow-hidden shadow-lg h-96">
-                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.145833481285!2d-46.65657158440697!3d-23.56309936754286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1683827517036!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                         </div>
+                        <h3 class="text-2xl font-bold mb-6">Localização</h3>
+                        <div class="rounded-lg overflow-hidden shadow-lg h-96">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.1312517213405!2d-34.930533424078256!3d-8.189530991842084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1d7529426cf%3A0xb8981c40a1f529a3!2sJurabarberstyle!5e0!3m2!1spt-BR!2sbr!4v1749465084068!5m2!1spt-BR!2sbr"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -324,25 +411,35 @@
             <p>&copy; 2025 JuraBarbaStyle. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
-    <div id="processing-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
+
+    <div id="processing-modal"
+        class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
         <div class="text-white text-lg flex items-center gap-4 bg-gray-800 p-6 rounded-lg shadow-xl">
-             <svg class="animate-spin h-6 w-6 text-amber-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg class="animate-spin h-6 w-6 text-amber-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-             </svg>
+                <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+            </svg>
             <span>Processando seu agendamento...</span>
         </div>
     </div>
 
-    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50 p-4">
-        <div class="bg-white rounded-xl p-8 max-w-md w-full text-center shadow-2xl transform transition-all scale-95 opacity-0">
+    <div id="confirmation-modal"
+        class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50 p-4">
+        <div
+            class="bg-white rounded-xl p-8 max-w-md w-full text-center shadow-2xl transform transition-all scale-95 opacity-0">
             <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-5">
-                <svg class="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <svg class="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
             </div>
             <h3 class="text-2xl font-bold mb-3">Agendamento Confirmado!</h3>
             <p class="text-gray-600 mb-6">Enviamos os detalhes para o seu contato. Nos vemos em breve!</p>
-            <button id="close-modal-btn" class="w-full bg-amber-500 text-white py-3 px-6 rounded-lg hover:bg-amber-600 font-semibold">Fechar</button>
+            <button id="close-modal-btn"
+                class="w-full bg-amber-500 text-white py-3 px-6 rounded-lg hover:bg-amber-600 font-semibold">Fechar</button>
         </div>
     </div>
 
@@ -355,7 +452,7 @@
             const confirmationModal = document.getElementById('confirmation-modal');
             const confirmationModalContent = confirmationModal.querySelector('.transform');
             const closeModalBtn = document.getElementById('close-modal-btn');
-            
+
             // Define a data mínima para hoje
             const today = new Date().toISOString().split('T')[0];
             dateInput.setAttribute('min', today);
@@ -370,7 +467,7 @@
 
                 setTimeout(() => {
                     timeSlotsContainer.innerHTML = '';
-                    
+
                     if (dayOfWeek === 0) { // Domingo
                         timeSlotsContainer.innerHTML = '<p class="col-span-full text-red-500 font-semibold">Desculpe, estamos fechados aos Domingos.</p>';
                         return;
@@ -408,12 +505,12 @@
 
             appointmentForm.addEventListener('submit', (event) => {
                 event.preventDefault();
-                
+
                 if (!appointmentForm.checkValidity()) {
                     alert('Por favor, preencha todos os campos obrigatórios.');
                     return;
                 }
-                
+
                 if (!selectedTimeSlot) {
                     alert('Por favor, selecione um horário.');
                     return;
@@ -423,7 +520,7 @@
 
                 setTimeout(() => {
                     processingModal.classList.add('hidden');
-                    
+
                     confirmationModal.classList.remove('hidden');
                     // Efeito de animação ao aparecer
                     setTimeout(() => {
@@ -444,7 +541,38 @@
                 }, 200);
             });
         });
+        function agendarServico(servicoId) {
+            // Espera até que o DOM esteja pronto (em caso de carregamento assíncrono)
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(() => {
+                    const selectServico = document.getElementById("service");
+                    if (selectServico) {
+                        selectServico.value = servicoId;
+                        selectServico.dispatchEvent(new Event("change"));
+                    }
+
+                    const agendamentoSection = document.getElementById("agendamento");
+                    if (agendamentoSection) {
+                        agendamentoSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                }, 100);
+            });
+
+            // Para execuções imediatas se DOM já estiver pronto
+            const selectServico = document.getElementById("service");
+            if (selectServico) {
+                selectServico.value = servicoId;
+                selectServico.dispatchEvent(new Event("change"));
+            }
+
+            const agendamentoSection = document.getElementById("agendamento");
+            if (agendamentoSection) {
+                agendamentoSection.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
     </script>
 
 </body>
+
 </html>
